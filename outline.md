@@ -16,7 +16,7 @@
 * Zum Ende der Ausbildung in App Entwicklung eingestiegen (Verantwortlicher im Raum?)
 * App mit Web Technologien auf Basis von mehreren Open Source Projekten gebaut
 * Eins besonders interessant und erforderte über die Jahre mehr Aufmerksamkeit
-* Ins Projektteam aufgenommen werden -> kleiner Traum wahr
+* Ins Projektteam aufgenommen werden -> kleiner Traum wurde wahr
 * Coole E-Mail-Adresse
 
 ## Apache Cordova
