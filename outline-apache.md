@@ -4,14 +4,16 @@ I encountered quite a few projects where the maintainer group is very small but 
 
 Users and maintainers should be aware of the state of the project and take steps to encourage people invested in the project to contribute to the best of their abilities.
 
-# Who am I
+# Facts about me
 
 1. Apache Cordova User
 2. Minor Apache Cordova contributor
 3. Active Committer & PMC
-4. No longer Cordova user and semi active maintainer
+4. No longer real Cordova user and semi active maintainer
+5. I suck at writing CSS
+6. This presentation is styled using CSS
 
-# How many people start
+# How many people get into open source
 
 Just using an OSS project
 
@@ -87,4 +89,11 @@ Just using an OSS project
 * Sometimes hard to reach because they may have moved on to other things
 
 > Try to keep them around
+
+# Is the project sustainable?
+
+* People available for fixes and security issues
+* Getting releases out (votes)
+* Development getting stuck
+* Maintainer burnout
 

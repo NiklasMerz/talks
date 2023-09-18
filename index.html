@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Open Source Talk</title>
+    <title>Money doesn’t help much – Support projects with contributions</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      body { font-family: 'Droid Serif'; }
+      body { font-family: 'Montserrat'; }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
+        color: #302d73;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 
@@ -22,9 +18,9 @@
         height: 92%;
         float: left;
       }
-        .left-column h2:last-of-type, .left-column h3:last-child {
-          color: #000;
-        }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
       .right-column {
         width: 75%;
         float: right;
@@ -37,7 +33,7 @@
 
 class: center, middle
 
-# Open Source: Zeit und Geld richtig investieren
+# Money doesn’t help much – Support projects with contributions
 
 ### Niklas Merz
 
@@ -45,13 +41,14 @@ class: center, middle
 
 # Agenda
 
-1. Intro
-2. Wer bin ich?
-3. Das Projekt Apache Cordova
-4. Open Source Kultur
-5. Projekte verstehen
-6. Beitrag leisten
-7. Praktische Tipps
+0. Why this talk?
+1. Facts about me
+2. How many people get into Open Source
+3. Getting invested
+4. Advice for first time contributors
+5. Onboarding new community members
+6. Types of contributors
+7. Is the project sustainable?
 
 ???
 
@@ -61,156 +58,48 @@ class: center, middle
 
 ---
 
-# Intro
+# Why
 
-* Warum möchte ich euch was über Open Source erzählen?
-* Wie kann ich Projekte unterstützen?
-* Den Einstieg finden
-* Open Source Reise
+* Many projects have only a few maintainers
+* Users and maintainers should be aware of the state of projects and *investments* made or needed
 
 ???
 
-* Warum -> Open source nicht wegzudenken (letztes Meetup)
-* Ich persönlich finde es wichtig zurückzugeben
-* Ein Projekt begleitet mich schon eine ganze Weile -> reingerutscht -> Weg bis zum Maintainer
-* Dort werde ich werde immer mal gefragt wie man Maintainer unterstützen kann
-* Sponsorships mit Geld bei uns nicht die Lösung -> häufig auch bei kleineren Projekten
-* Vorschlag: Selbst aktiv werden -> Einstieg ist schwer
-* Typische Open Source Reise: Nutzer, Beobachter, Contributor, Maintainer
+* What happens if one or two important people disappear?
 
 ---
 
-# Wer bin ich?
+# Facts about me
 
-* Ausbildung Fachinformatiker - Anwendungsentwicklung in Fulda
-* App mit Web Technologien auf Basis von mehreren Open Source Projekten
-* Jetzt Python, Django und andere Web-Dinge
-* Open Source Friday & Mentor für Open Source in unserem kleinen Startup
-* Bekanntschaften durch Open Source
-* Viele wichtige Fähigkeiten in Open Source gelernt
-
-???
-
-* Ein paar Worte zu mir
-* Zum Ende der Ausbildung in App Entwicklung eingestiegen 
-* App mit Web Technologien auf Basis von mehreren Open Source Projekten gebaut
-* Eins besonders interessant und erforderte über die Jahre mehr Aufmerksamkeit
-* Open Source erst nur in der Freizeit -> Wurde zur Arbeitszeit
-* Ins Projektteam aufgenommen werden -> kleiner Traum wurde wahr
-* Coole E-Mail-Adresse
-* Gute erfahrung gemacht online & Events: Open Source knüpft Kontakte -> Job durch Open Source
-* Skills: Git, Code Review, Kommunikation
-
----
-
-## Apache Cordova
-
-* Framework & Tooling für Erstellung von Apps für Android und iOS mit Javascript, CSS & HTML
-* Apache Software Foundation
-* Unterstützung von großen Namen wie Google, Microsoft, Adobe ist lange weg
-* Kleines Team mit handvoll Entwicklern
+1. Apache Cordova User
+2. Minor Apache Cordova contributor
+3. Active Committer & PMC
+4. No longer real Cordova user and semi active maintainer
+5. I suck at writing CSS
+6. This presentation is styled using CSS
 
 ???
 
-* Besagtes Projekt für App Entwicklung
-* Dort habe ich gelernt wie Open Source richtig funktioniert
-* Unterschiend größeres Projekt mit Foundation vs 1-Mann-Freizeitprojekt
-* Dennoch Leute arbeiten nach eigenem Ermessen & Bedarf, meist **Freizeit**
-* Unsere Bugs und Featurewünsche blieben liegen -> selbst Lösungen finden
-* ASF erlaubt es nicht Spendengelder zu benutzen um Entwickler zu bezahlen -> Einflussnahme
-* Apaches Aufgabe: Prozesse die Qualität und Rechtsicherheit mit Lizenzen gewährleisten
-* **Wir haben uns entschieden uns zu engagieren damit wir auf das Projekt bauen können und Probleme selbst lösen** -> Arbeitszeit für Open Source
 
----
-
-## Open Source Kultur
-
-* Gibt es ein starkes Bewusstsein für Open Source im Unternehmen?
-* Nutzung verstehen
-* Lizenzen kennen und beachten
-* Eigenen Beitrag in Betracht ziehen
-
-???
-
-* Bedeutung und Risiken der genutzen Projekte erkannt
-* Mein persönliches Projekt wurde Open Source besser in Firma etablieren -> reden mit Teamleitern und GF
-* Individuell, Risiokabhängig -> keine Rechtsberatung
-* Lizenzen & Haftung heißes Thema
-* Sich selbst fragen: Wie viel Open Source nutze ich und würde es mich weiter bringen aktiv zu werden?
-* Ziel: Zurückzugeben was wir selbst beitragen können und unkritische Sachen nich zurückhalten
-* Hilfe bekommen
-
----
-
-## Projekte verstehen
-
-* "Kritische" Projekte identifizieren
-* Bezahlter Support?
-* Neuerungen und Aktiviäten verfolgen
-* In Kontakt treten
-
-???
-
-* Startpunkt: Projekte betrachten -> Gespür kriegen
-* Aktivität, Team dahinter, große Firma, Kultur der Beiträge
-* Namen wiedererkennen
-* **Auf was achtet ihr wenn ihr Projekte anschaut?**
-
----
-
-## Beitrag leisten
-
-* Prozesse & Kultur besser verstehen
-* Kontakte zu Experten knüpfen
-* Technologie, Programmiersprachen lernen
-* Feedback zu Vorschlägen und Verwendung bekommen
-* Projekt zukunftssicherer machen
-
-???
-
-* Wissen in Projekt aufbauen -> Zukunftssicherer Invest
-* Mentor finden -> seit Jahren mit dem aktivsten Cordova Entwickler in Japan in Kontakt
-* Bugs fixen, Features bauen für die keiner verfügbar ist
-* Langweilige Arbeit wie Releases erstellen -> Apache Prozess
-
----
-
-## Praktische Tipps
-
-* Leute im Unternehmen finden, die Interesse haben
-* Klein anfangen
-* Organisch wachsen
-* Ansehen und Vertrauen gewinnen
-* Ressourcen sinnvoll investieren
-
-???
-
-* Abschließend noch kleine Tipps denn der Einstieg ist schwer, wenn man nicht so recht weiß was man tun kann
-* Alles im Blick behalten: GitHub, Website, Blogs, Maillinglisten.....
-* Wenn man weiß wie es ungefähr läuft ersten Kontakt aufnehmen
-* Kleine Initiativen starten und schauen ob Wirkung zeigt
-* Leute die begeistert sind Freiheiten geben sich einzubringen -> Open Source Friday
-* Issues einreichen und schauen was passiert
-* Wenn man sich sehr für das Projekt interessiert und es wichtig ist, ist es einfacher am Ball zu bleiben und einen Einstieg zu finden.
 
 ---
 
 class: center, middle
 
-# Fragen?
+# Questions?
 
 ---
 
 .left-column[
-  ## Kontakt
+  ## Contact
 ]
 .right-column[
 
-Ihr findet mich auf GitHub.
+Find me on GitHub.
 
-1. Diese Präsentation gebaut mit Remark: https://niklas.merz.dev/open-source-talk
+1. Presentation: https://niklas.merz.dev/open-source-talk
 
-2. Coole E-Mail-Adresse: **niklasmerz@apache.org**
+2. E-Mail me: **niklasmerz@apache.org**
 
 ]
 
