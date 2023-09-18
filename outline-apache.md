@@ -24,24 +24,42 @@ Just using an OSS project
 * Fixing issues & first PRs
 * Writing extensions, plugins, features critical for business success
 
-> How to support here
+## Advice for first-time contributors
+
+* Be kind
+* Be patient
+* Read documentation: A lot of common questions should already be documented "somewhere"
+* If in doubt to be afraid to ask
+
+##  How to support here as a maintainer
+
+* Be kind
+* Be patient
+* Respond in a timely manner to keep motivation high and make contributions feel welcome
 
 # Turnover point
 
 * Do work themselves
 * Find someone to pay to do the work
-* Sponsoring the core maintainers if possible
+* Sponsoring the core maintainers if possible at all
 
 ## How to support here
 
-* Make support options visible
+* Make paid support options visible
     * Companies (PLC4X used to do that)
+    * Contributors working as freelancers
+    * **Donations to the ASF cannot be used for development work**
 * Good and easy to find documentation on how to contribute
     * Avoid to many "uncommon" steps and prefer existing tooling
-    * Try to be helpful and respond timely with first contributions to keep motivation high
 
 # Becoming part of the community
 
+* Get a feel if a new contributor works in the "open source spirit"
+    * Can be trusted to complete task from start to finish
+    * Listens to feedback
+    * Asks for reviews and feedback before doing something possibly breaking
+* Show trust early
+* Review work and give advice
 ## Types of maintainers
 
 ### Silent hero
@@ -60,6 +78,7 @@ Just using an OSS project
 
 * Voice of the projects
 * Talks and promotions
+* Website, Documentations etc.
 ### Dinosaur
 
 * Started the project or there since "the early days"
@@ -67,5 +86,5 @@ Just using an OSS project
 * Knows the history behind things
 * Sometimes hard to reach because they may have moved on to other things
 
--> Try to keep them around
+> Try to keep them around
 
