@@ -81,7 +81,7 @@ Just using an OSS project
 * Voice of the projects
 * Talks and promotions
 * Website, Documentations etc.
-### Dinosaur
+### Legend
 
 * Started the project or there since "the early days"
 * Lot of deep knowledge
@@ -97,3 +97,8 @@ Just using an OSS project
 * Development getting stuck
 * Maintainer burnout
 
+
+
+# Resources
+
+https://un.curl.dev/
