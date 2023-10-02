@@ -52,7 +52,7 @@ Just using an OSS project
     * Contributors working as freelancers
     * **Donations to the ASF cannot be used for development work**
 * Good and easy to find documentation on how to contribute
-    * Avoid to many "uncommon" steps and prefer existing tooling
+    * Avoid too many "uncommon" steps and prefer existing tooling
 
 # Becoming part of the community
 
