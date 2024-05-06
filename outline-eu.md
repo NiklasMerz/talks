@@ -12,6 +12,7 @@ Users and maintainers should be aware of the state of the project and take steps
 4. No longer real Cordova user and somewhat active maintainer in my free time
 5. I suck at writing CSS
 6. This presentation is styled using CSS
+7. I got help from AI for drawing pictures because I can't draw as well
 
 # Looking at the village
 
@@ -21,16 +22,16 @@ Users and maintainers should be aware of the state of the project and take steps
 # Interesting Survey results
 
 * Most used platforms match our expectation
+* Personal impression got confirmed
 * Deprecated stuff is barely used
 * Personal feel of pressing issues confirmed
 * Good ideas to work on
 * Documenation!
 
-# Finding people to pick up the work
+# Pick up the work
 
 * scratch your own itch
-* hard to find someone for the other tasks
-
+* hard to find someone for other more boring or difficult tasks
 
 # Types of maintainers
 
@@ -57,8 +58,8 @@ Users and maintainers should be aware of the state of the project and take steps
 
 * Started the project or there since "the early days"
 * Lot of deep knowledge
-* Knows the history behind things
-* Sometimes hard to reach because they may have moved on to other things
+* Knows the history behind everything
+* Either still active daily or sometimes hard to reach because they may have moved on to other things
 
 > Try to keep them around
 
