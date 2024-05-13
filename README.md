@@ -1,4 +1,4 @@
-# My talks about open source and money
+# My talks about open source
 
 **[Open Source: Zeit und Geld richtig investieren](/index_de.html)** Software Developer Meetup Fulda June 2023
 
