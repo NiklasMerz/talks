@@ -61,9 +61,9 @@ class: center, middle
 
 ???
 
-* Hello I'm Niklas and welcome to my talk maintainers and users
+* Hello I'm Niklas and welcome to my talk about maintainers and users of open source
 * Open source communities to me are like villages
-* Every village has different people and different needs or problems and also interesting relations to each other villages
+* Every village has different people and different needs or problems and also interesting relations to other villages
 * Projects at the ASF can learn a lot from each other and get ideas from each other
 * That's why I would like to share some insights from a survey we ran at Apache Cordova and my observations from our little village
 
@@ -84,9 +84,9 @@ class: center, middle
 
 * First a roadmap for this talk
 * Start with giving some context
-* Then How we did a survey and what we learned
+* Then talk about pur survey and what we learned
 * I'd like to discuss how we get work done in open source and what motivates people
-* Then I'd like to introduce some maintainer types I observed
+* Then there is the fun part - I'd like to introduce some maintainer types
 * And finally I'd like to bring sustainability into the discussion
 
 ---
@@ -104,7 +104,7 @@ class: center, middle
 
 * Many projects have a very small but dedicated maintainer group
 * Users and maintainers have different perceptions and goals for a project
-* Asses the state of the project from time to time and should do a **health check for themselves**
+* Occasionally asses the state of the project and could do a **health check for themselves**
 * From time to time I think projects should inform user group about state of the project
 * Users & maintainers can work together to indetify areas for improvement
 * By definining work that needs to be done projects can attract new maintainers
@@ -120,15 +120,17 @@ class: center, middle
 * I suck at writing CSS
 * This presentation is styled using CSS
 
+<img src="img/cordova.png" alt="Cordova" style="width: 50%; height: 50%;">
+
 ???
 
-* Give some context
+* **Some facts about me**
 * I became a user of Apache Cordova many years ago
 * Cordova is a framework for **building mobile apps using web technologies**
-* **Previous job** introduced to developing apps this way
+* **My previous job** introduced to developing apps using this approach
 * In that job we got more and more advanced users and I started contributing
 * A few years later I became a committer and PMC member
-* I no longer build apps but I'm helping when I can
+* I no longer build apps but I'm helping the project where I can
 * Fun fact CSS
 
 ---
@@ -143,8 +145,9 @@ class: center, middle
 
 ???
 
+* ** First let's a have a look at a village**
 * Projects and their communities are very diverse
-* You might also ask is the project sustainable and healthy?
+* If you consider using a new project you might ask is the project sustainable and healthy?
 * Are enough maintainers available for fixes and security issues?
 * Are releases getting out in time and votes done?
 * The size, demographics, age and maturity of a project can change over time
@@ -154,16 +157,23 @@ class: center, middle
 
 # Running a survey
 
+* Collected questions on GitHub
+* Google Survey
+* Announced & promoted it on website and social media
+* Open for a month
+* Around 200 responses
+
 ???
 
+* I was curious about our project and community
 * At Cordova we ran a survey.
-* Collected questions on GitHub
+* Collected questions on in a simple document on  GitHub
 * Google Survey
 * Announced & promoted it on website and social media
 * Accepted answers for a month
 * Closed and compiled results
 * got around 200 responses
-* We thing that's a good result because only a fraction of users will respond
+* We consider this a good result because only a fraction of users will respond
 
 ---
 
@@ -173,26 +183,35 @@ class: center, middle
 * Open questions with great feedback
 * Lot's of work for open questions
 * Most used platforms match our expectation
+* Personal feel of pressing issues confirmed
+* Documentation is the biggest issue
+
+???
+
+* Good usage data on platforms
+* Open questions with great feedback
+* Lot's of work for open questions
+* Most used platforms match our expectation
 * Deprecated stuff is barely used
-* My personal impression got confirmed
 * Personal feel of pressing issues confirmed
 * Good ideas to work on
 * Documentation is the biggest issue
-
 ---
 
 # Pick up the work
 
+* We got some ideas for large tasks from the survey
 * Scratch your own itch
-* Documentation is critical
 * How about the other more boring or difficult tasks?
+* Documentation is critical
 
 ???
 
-* Scratch your own itch works for me
-* Typical for open source
-* How to get better documentation when developers don't like writing docs?
+* **After the survey it's probably time to do some work**
+* Created Large tasks from the survey
+* Scratch your own itch is how open source usually works
 * Hard to find someone for other more boring or difficult tasks
+* How to get better documentation when developers don't like writing docs?
 * **A lot boils down to motivation**
 
 
@@ -200,17 +219,26 @@ class: center, middle
 
 # Motivation
 
-* **Extrinsic**
-  * Paid work gets done
-  * General maintenance and community building is usually unpaid
+### “Creation is an intrinsic motivator, maintenance usually requires extrinsic motivation” 
+
+@BALUPTON. via isaacs/github (“Working in Public - The making and maintenance of open source software” by Nadia Eghbal.)
+
+???
+
+* I found this great quote in a book about open source
 
 * **Intrinsic**
   * Fix things or build features for my project
-  * Love for the project and/or community
-  * **What about tasks that don't fall in someones motivation window?**
-  * Looking for ideas
+  * This work is usualy getting done fast
+  * Love for the project and community
 
-???
+* **Extrinsic**
+  * If you pay someone to work on a project there is extrinsic motivation
+  * General maintenance and community building is usually unpaid
+
+
+* **What about tasks that don't fall in someones motivation window?**
+* Looking for ideas
 
 ---
 
@@ -231,14 +259,14 @@ class: center, middle
 
 # Warning: AI Content Incoming
 
-## DALL-E painted the following pictures
+## ChatGPT painted the following pictures
 
 ???
 
+* Short AI warning 
 * This presentation is really lacking in images because I'm even worse at drawing than writing CSS
-* I didn't use these fancy AI tools before so I thought it would be interesting to see what it comes up with just giving it my descriptions of the maintainer types
-* I guess these images are full of stereotypes as AI content often is
-* Dont't take these images too seriously and let's focus on the personas
+* I tried giving the AI my persona descriptions and it came up with these images
+* Dont't take these images too seriously
 
 ---
 
@@ -247,7 +275,7 @@ class: center, middle
 
 * Stays in background
 * Does a lot of coding work
-* Thankless tasks:
+* Important tasks:
   * Releases
   * Updates, refactorings
   * Documentation
@@ -265,7 +293,7 @@ From my experience this is the most important type of maintainer to keep a proje
 
 * Does not need attention or fame
 * Does a lot of coding work
-* Thankless tasks:
+* Important but sometimes boring tasks:
   * Releases
   * Updates, refactorings
   * Documentation
@@ -345,11 +373,21 @@ From my experience this is the most important type of maintainer to keep a proje
 class: center, middle
 
 
-# Any ideas?
 
-### Please check out my GitHub discussion
+### Which type are you? 
+
+### Do know anybody suitable for open roles in your project?
+
+Ideas for personas?
 
 <img src="img/qrcode-discussions-personas.png" alt="QR" style="width: 50%; height: 50%;">
+
+???
+
+* Now that we have some ideas what type of maintainers are needed in a project 
+* **you can ask youserlf which type you are** 
+* **if you know anybody suitable for open roles in your project**
+* Feedback on personas on this discussion page behind the qr code
 
 ---
 
@@ -375,22 +413,25 @@ class: center, middle
 # Closing words
 
 * Survey are helpful to get a feel for the project
+* Projects need occassional health checks
 * **Maintainers** please encourage contributions
 * **Open source beginners** please just start contributing
 
 ???
 
-Every project is different
+**Every project is different**
+
+**Close with Call to action**
 
 * **Consider running a survey for your project**
 * Projects need occassional health checks
 * Maintainers please encourage contributions
-* Open source beginners please just start contributing
+* Open source beginners please just start contributing somebody will guide you for sure
 ---
 
 class: center, middle
 
-# Questions?
+# Questions or Ideas?
 
 ---
 
