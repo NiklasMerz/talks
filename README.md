@@ -4,6 +4,8 @@
 
 **[Money doesn&#39;t help much - Money doesn`t help much – Support projects with contributions](/communityovercode.html)** Community Over Code 2023 (formerly known as ApacheCon) October 2023 Halifax, Canada
 
+**[Community census: Understanding users & maintainer personas with a community survey](/communityovercode-eu.html)** Community Over Code EU 2024 (formerly known as ApacheCon) June 2024 Bratislava, Slovakia
+
 # About Me
 
 [GitHub](https://github.com/NiklasMerz)
