@@ -6,6 +6,10 @@
 
 **[Community census: Understanding users & maintainer personas with a community survey](/communityovercode-eu.html)** Community Over Code EU 2024 (formerly known as ApacheCon) June 2024 Bratislava, Slovakia
 
+# Other talks
+
+**[AEVO Ausbildungsprojekt Fachinformatiker](/ausbildung.html)** IHK Fulda September 2024
+
 # About Me
 
 [GitHub](https://github.com/NiklasMerz)
