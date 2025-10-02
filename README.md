@@ -8,6 +8,8 @@
 
 # More Talks and Sessions
 
+**[Open Source Basics](/oss_basics.html)** Open Source for developers
+
 **[Web Standards Beyond The Browser](https://webview-cg.github.io/tpac/TPAC-2024/Breakout/StandardsBeyondTheBrowser.html)** hosted breakout session at W3C TPAC September 2024 Anaheim, CA, USA
 
 **[WebView CG Meetings at TPAC 2024](https://github.com/webView-CG/tpac?tab=readme-ov-file#webviewcg-meetings)** hosted meetings as Co-Chair of WebView CG
