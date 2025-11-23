@@ -1,0 +1,7 @@
+# State of WebViews- Can we fix things?
+
+## Abstract
+
+WebViews are a weird piece of web technology with their use cases and capabilities very fragmented today. WebViews are used as in-app-browsers, for hybrid app development technology, MiniApps and more. There are also different developer types that complicate this even more. Some developers specifically target WebViews for their content to be used in hybrid apps or MiniApps and developers targeting the general web might not be aware if and how their websites run in WebViews. With tools and resources like Baseline or caniwebview.com we are slowly trying to get a clearer picture what going wrong and can be improved with this very versatile piece of the web. MiniApps that are very popular in some markets also show a very strong fragmentation and very little standardization. With collaboration and improvements between WebViews, MiniApps, PWA new technoligies like Isolated Web Apps or new engines like Servo there is good potential to improve the web in this space, but it's complicated.
+
+The W3C WebView Community Group was formed to identify, understand, and reduce the issues arising from the use of software components (typically referred as WebViews) that are used to render Web technology-based content. As member and co-chair of community group for some years I'd like to give a little overview what WebViews are today, what we worked on to improve things and what I think could help this space.
