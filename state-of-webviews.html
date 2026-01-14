@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Source Basics</title>
+    <meta charset="utf-8">
+    <style>
+      body { font-family: 'DejaVu Sans'; }
+      h1, h2, h3 {
+        font-family: 'DejaVu Sans';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'DejaVu Sans'; }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# State of WebViews - Can we fix things?
+
+## Niklas Merz
+
+#### W3C WebView Community Group, Apache Cordova
+
+---
+
+# Agenda
+
+1. What are WebViews?
+1. Why do I care about WebViews
+1. Why you should care about WebViews
+1. The current state of WebViews
+1. Documentation and Tooling
+1. A the new engine - Servo in Apache Cordova
+1. The future: AI? Mini apps?
+1. Q&A
+
+
+???
+
+---
+
+# State of WebViews
+
+* Mobile WebViews
+  * Android WebView
+  * iOS WKWebView
+  * Other Mobile WebViews
+  * **Mini apps**
+  * Hybrid apps: Apache Cordova, Capacitor, React Native WebView...
+* Desktop WebViews
+  * Microsoft Edge WebView2
+  * macOS WKWebView
+  * Linux WebViews (WebKitGTK, QtWebEngine)
+  * Electron, Tauri
+* more embedding of the web
+
+---
+
+Documentation and Tooling
+
+* Baseline, web-features
+* BCD
+* CanIWebView
+* Testing Apps
+
+???
+
+* web-features earlier today
+
+---
+
+class: center, middle
+
+# Questions?
+
+---
+
+.left-column[
+  ## Thanks!
+]
+
+.right-column[
+
+
+This presentation: https://niklas.merz.dev/oss_basics
+
+
+]
+
+
+    </textarea>
+    <script src="remark.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
