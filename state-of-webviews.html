@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Open Source Basics</title>
+    <title>State of WebViews - Can we fix things?</title>
     <meta charset="utf-8">
     <style>
       body { font-family: 'DejaVu Sans'; }
@@ -43,7 +43,7 @@ class: center, middle
 
 # Agenda
 
-1. What are WebViews?
+1. What is a WebView?
 1. Why do I care about WebViews
 1. Why you should care about WebViews
 1. The State of WebViews
@@ -54,6 +54,26 @@ class: center, middle
 
 
 ???
+
+---
+
+# What is WebView?
+
+Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
+
+---
+
+# Why do I care about WebViews?
+
+* App developer
+* Cordova Hacker
+* Cordova Maintainer
+* WebView CG Member
+* WebView CG Chair
+
+---
+
+# Why you should care about WebViews
 
 ---
 
@@ -68,15 +88,21 @@ class: center, middle
   * macOS WKWebView
   * Linux WebViews (WebKitGTK, QtWebEngine)
   * Electron, Tauri
-* more embedding of the web
+* ...more embedding of the web
 
 ---
 
-# The Good, the Bad and the Ugly
+# Pain points for developers
+
+* Inconsistent support for web features
+* Platform-specific APIs that basically do the same thing differently
+  * Loading files -> `file://` vs. custom schemes vs WebViewAssetLoader
+  * Cookie handling
+  * Permissions
 
 ---
 
-Documentation and Tooling
+# Documentation and Tooling
 
 * Baseline, web-features
 * [caniwebview.com/baseline](https://caniwebview.com/baseline)
@@ -86,6 +112,19 @@ Documentation and Tooling
 ???
 
 * web-features earlier today
+
+---
+
+# Testing Servo in Apache Cordova
+
+
+---
+
+# The Future of WebViews
+
+**Fixing WebViews, improves more than you think**
+* WebViews used in a browsing context
+* Mini apps
 
 ---
 
