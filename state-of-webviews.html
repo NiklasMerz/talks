@@ -61,6 +61,14 @@ class: center, middle
 
 Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
 
+[User Agent finding from W3C TAG](https://w3ctag.github.io/user-agents/#ua-as-software) 
+
+???
+
+* Embedding of web content in native apps
+* There is a WebView Community Group at W3C
+* Long discussion on specifics
+
 ---
 
 # Why do I care about WebViews?
@@ -68,12 +76,31 @@ Software components that are used to render Web technology-based content outside
 * App developer
 * Cordova Hacker
 * Cordova Maintainer
-* WebView CG Member
-* WebView CG Chair
+* WebView Community Group Member
+* WebView Community Group Chair
+
+???
+
+* Got in touch with WebViews many years ago
+* Got to solve some interesting problems with them
+* They never let me go
+* Some opportunities to improve them came up
 
 ---
 
 # Why you should care about WebViews
+
+> WebViews are more than just a bridge between native and web—they are a critical component of many digital user
+experiences today.
+
+https://blog.merzlabs.com/posts/care-about-webviews/
+
+???
+
+* Easily used without noticing
+* Exposed to security risks
+* In app browsing
+* Mini apps
 
 ---
 
@@ -100,13 +127,47 @@ Software components that are used to render Web technology-based content outside
   * Cookie handling
   * Permissions
 
+???
+
+Reason for forming the CG
+
+---
+
+# Custom scheme vs Asset handler
+
+### Special Origins on WebViews
+
+You can't use file:// these days, right?
+
+.columns[
+.column[
+### Android
+
+WebViewAssetLoader
+
+- Register domains
+- https://appassets.androidplatform.net/
+- https://mydomain.com
+- Intercept GET & path
+]
+.column[
+### iOS
+
+WKURLSchemeHandler
+
+- Register custom URL schemes, e.g. app://
+- myapp://appcontent
+- Intercept GET & POST
+]
+]
+
 ---
 
 # Documentation and Tooling
 
 * Baseline, web-features
-* [caniwebview.com/baseline](https://caniwebview.com/baseline)
 * Browser compat data (BCD)
+* [caniwebview.com/baseline](https://caniwebview.com/baseline)
 * Testing Apps -> [caniwebview.com/apps](https://caniwebview.com/apps)
 
 ???
@@ -115,7 +176,17 @@ Software components that are used to render Web technology-based content outside
 
 ---
 
+![Screenshot caniwebview.com/baseline](img/webview/screenshot.png)
+
+---
+
 # Testing Servo in Apache Cordova
+
+* Servo is easy to add to an Android app!
+* ServoView lacks features other WebViews have
+    * Custom scheme or asset loader
+    * Evaluate JavaScript
+    * Cookie store
 
 
 ---
@@ -125,12 +196,34 @@ Software components that are used to render Web technology-based content outside
 **Fixing WebViews, improves more than you think**
 * WebViews used in a browsing context
 * Mini apps
+* AI-powered apps?
+
+???
+
+* AI is everywhere these days
+* Not sure if it stays
+* **Similar way of bridging native and web but AI with the Web?**
+
+---
+
+# Can we fix things?
+
+* It's hard & complex
+* Big vendors show little interest
+* Being independent is an interesting position
+* **Documentation, tooling and alternatives**
+* Standards are far away
+
+???
+
+* Documentation, tooling and alternatives are a good start to show whats possible
+* Join the W3C WebView Community Group
 
 ---
 
 class: center, middle
 
-# Questions?
+# Q&A?
 
 ---
 
@@ -141,7 +234,7 @@ class: center, middle
 .right-column[
 
 
-This presentation: https://niklas.merz.dev/oss_basics
+This presentation: https://niklas.merz.dev/state-of-webviews
 
 
 ]
