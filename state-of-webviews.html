@@ -4,32 +4,143 @@
     <title>State of WebViews - Can we fix things?</title>
     <meta charset="utf-8">
     <style>
-      body { font-family: 'DejaVu Sans'; }
-      h1, h2, h3 {
-        font-family: 'DejaVu Sans';
-        font-weight: normal;
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
       }
-      .remark-code, .remark-inline-code { font-family: 'DejaVu Sans'; }
+      
+      h1, h2, h3 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700;
+        color: #733d9d;
+      }
+      
+      h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+      
+      h2 {
+        font-size: 2em;
+        margin-top: 0.8em;
+      }
+      
+      h3 {
+        font-size: 1.5em;
+        color: #ff6600;
+      }
+      
+      .remark-slide-content {
+        background-color: #fff;
+        font-size: 1.5em;
+        padding: 1em 2em;
+      }
+      
+      .remark-slide-content h1 {
+        color: #733d9d;
+      }
+      
+      /* Center and middle slides */
+      .center.middle h1 {
+        margin-bottom: 0.3em;
+      }
+      
+      .center.middle h2 {
+        color: #555;
+        font-weight: 400;
+        font-size: 1.8em;
+      }
+      
+      .center.middle h4 {
+        color: #ff6600;
+        font-weight: 600;
+        font-size: 1.2em;
+      }
+      
+      /* Links */
+      a, a:visited {
+        color: #733d9d;
+        text-decoration: none;
+        border-bottom: 2px solid #ff6600;
+      }
+      
+      a:hover {
+        color: #ff6600;
+        border-bottom-color: #733d9d;
+      }
+      
+      /* Code styling */
+      .remark-code, .remark-inline-code { 
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+        background-color: #f5f5f5;
+        border-radius: 3px;
+      }
+      
+      .remark-inline-code {
+        padding: 2px 6px;
+        color: #733d9d;
+      }
+      
+      .remark-code {
+        background-color: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1em;
+        border-left: 4px solid #ff6600;
+      }
+      
+      /* Lists */
+      ul, ol {
+        line-height: 1.6;
+      }
+      
+      li {
+        margin-bottom: 0.5em;
+      }
+      
+      strong {
+        color: #733d9d;
+        font-weight: 700;
+      }
 
       /* Two-column layout */
       .left-column {
-        color: #777;
+        color: #666;
         width: 20%;
         height: 92%;
         float: left;
       }
-        .left-column h2:last-of-type, .left-column h3:last-child {
-          color: #000;
-        }
+      
+      .left-column h2:last-of-type, 
+      .left-column h3:last-child {
+        color: #733d9d;
+      }
+      
       .right-column {
         width: 75%;
         float: right;
         padding-top: 1em;
       }
 
+      /* Images */
       img {
         max-width: 100%;
         height: auto;
+        border-radius: 4px;
+      }
+      
+      /* Slide number */
+      .remark-slide-number {
+        color: #999;
+        font-size: 0.8em;
+      }
+      
+      /* Blockquotes */
+      blockquote {
+        border-left: 4px solid #733d9d;
+        padding-left: 1em;
+        margin-left: 0;
+        font-style: italic;
+        color: #555;
       }
     </style>
   </head>
@@ -62,13 +173,15 @@ class: center, middle
 
 ---
 
-# What is WebView?
+# What is a WebView?
 
-Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
+[W3C WebView Community Group](https://www.w3.org/community/webview/)
+
+> Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
 
 [User Agent finding from W3C TAG](https://w3ctag.github.io/user-agents/#ua-as-software) 
 
-As software components, user agents can be parts of larger applications and can call libraries that implement the web
+> As software components, user agents can be parts of larger applications and can call libraries that implement the web
 platform or parts of it.
 
 ???
@@ -76,6 +189,7 @@ platform or parts of it.
 * Embedding of web content in native apps
 * There is a WebView Community Group at W3C
 * Long discussion on specifics
+* Maybe we should pick it up again
 
 ---
 
