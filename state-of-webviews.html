@@ -26,6 +26,11 @@
         float: right;
         padding-top: 1em;
       }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     </style>
   </head>
   <body>
@@ -62,6 +67,9 @@ class: center, middle
 Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
 
 [User Agent finding from W3C TAG](https://w3ctag.github.io/user-agents/#ua-as-software) 
+
+As software components, user agents can be parts of larger applications and can call libraries that implement the web
+platform or parts of it.
 
 ???
 
@@ -129,18 +137,18 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 
 ???
 
-Reason for forming the CG
+* Reason for forming the CG
 
 ---
 
 # Custom scheme vs Asset handler
 
-### Special Origins on WebViews
+### Special Origins
 
 You can't use file:// these days, right?
 
-.columns[
-.column[
+---
+
 ### Android
 
 WebViewAssetLoader
@@ -149,8 +157,7 @@ WebViewAssetLoader
 - https://appassets.androidplatform.net/
 - https://mydomain.com
 - Intercept GET & path
-]
-.column[
+
 ### iOS
 
 WKURLSchemeHandler
@@ -158,8 +165,6 @@ WKURLSchemeHandler
 - Register custom URL schemes, e.g. app://
 - myapp://appcontent
 - Intercept GET & POST
-]
-]
 
 ---
 
@@ -176,7 +181,30 @@ WKURLSchemeHandler
 
 ---
 
-![Screenshot caniwebview.com/baseline](img/webview/screenshot.png)
+# A clear picture?
+
+<img src="img/webview/caniwebview-baseline.png" style="max-width: 100%; height: auto;" alt="Screenshot caniwebview.com/baseline">
+
+???
+
+* Looking at web feautures helps us get a picture of where issues are
+* BCD data is too granualar
+* Once we have good data we can start working with vendors and having disucssions
+* Great help from Google team on baseline and openwebdocs
+
+---
+
+# Servo - The new contender
+
+> Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in
+applications.
+
+???
+
+* Started by Mozilla
+* Now at the Linux Foundation
+* Turbulent history but gaining more traction recently
+* **Focus on embedding makes it perfect for WebViews**
 
 ---
 
@@ -188,6 +216,11 @@ WKURLSchemeHandler
     * Evaluate JavaScript
     * Cookie store
 
+???
+
+* Thanks to some funding and guidance from NGI Mobifree fund by NLnet I was able to add Servo as WebView option to Apache Cordova Android.
+* Got to work on bringing Servo to Cordova
+* Cordova back in the day had Crosswalk
 
 ---
 
@@ -218,6 +251,14 @@ WKURLSchemeHandler
 
 * Documentation, tooling and alternatives are a good start to show whats possible
 * Join the W3C WebView Community Group
+
+---
+
+# We need help!
+
+* Reporting issues
+* Writing behavioral docs
+* Building WebView APIs for Servo
 
 ---
 
