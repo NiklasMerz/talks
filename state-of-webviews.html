@@ -155,6 +155,10 @@ class: center, middle
 
 #### W3C WebView Community Group & Apache Cordova
 
+???
+
+Who has considered WebViews while developing apps or for the web?
+
 ---
 
 # Agenda
@@ -212,7 +216,7 @@ platform or parts of it.
 
 # Why you should care about WebViews
 
-> WebViews are more than just a bridge between native and web—they are a critical component of many digital user
+> WebViews are more than just a bridge between native and web. They are a critical component of many digital user
 experiences today.
 
 https://blog.merzlabs.com/posts/care-about-webviews/
@@ -239,13 +243,21 @@ https://blog.merzlabs.com/posts/care-about-webviews/
   * Electron, Tauri
 * ...more embedding of the web
 
+???
+
+* Lots of different WebViews out there
+* Very different use cases and capabilities
+* Some are for browser like experiences
+* Some are for building apps or parts of apps
+* Fragmentation is a big issue
+
 ---
 
 # Pain points for developers
 
 * Inconsistent support for web features
 * Platform-specific APIs that basically do the same thing differently
-  * Loading files -> `file://` vs. custom schemes vs WebViewAssetLoader
+  * Loading files from the app bundle
   * Cookie handling
   * Permissions
 
@@ -260,6 +272,8 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 ### Special Origins
 
 You can't use file:// these days, right?
+
+> https://blog.merzlabs.com/posts/webview-history/
 
 ---
 
@@ -280,6 +294,11 @@ WKURLSchemeHandler
 - myapp://appcontent
 - Intercept GET & POST
 
+???
+
+* Good example of platform-specific APIs that do the same thing differently
+* 
+
 ---
 
 # Documentation and Tooling
@@ -291,7 +310,9 @@ WKURLSchemeHandler
 
 ???
 
-* web-features earlier today
+* We came to the conclusion that documentation is important
+* Central place to find info on WebView information
+* web-features earlier today is one thing to look at
 
 ---
 
@@ -313,10 +334,14 @@ WKURLSchemeHandler
 > Servo aims to empower developers with a lightweight, high-performance alternative for embedding web technologies in
 applications.
 
+From servo.org
+
+<!--<img src="img/webview/servo-meme.jpg" alt="Servo Meme" style="max-width: 60%; margin: 0 auto; display: block;">-->
+
 ???
 
-* Started by Mozilla
-* Now at the Linux Foundation
+* Current webviews are based on big engines by OS vendors
+* Time to look at alternatives
 * Turbulent history but gaining more traction recently
 * **Focus on embedding makes it perfect for WebViews**
 
@@ -347,6 +372,7 @@ applications.
 
 ???
 
+* Fixing WebViews helps mini apps and more
 * AI is everywhere these days
 * Not sure if it stays
 * **Similar way of bridging native and web but AI with the Web?**
@@ -355,11 +381,11 @@ applications.
 
 # Can we fix things?
 
-* It's hard & complex
+* It's complicated
 * Big vendors show little interest
 * Being independent is an interesting position
 * **Documentation, tooling and alternatives**
-* Standards are far away
+* Standards are a far away goal
 
 ???
 
