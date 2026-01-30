@@ -157,7 +157,10 @@ class: center, middle
 
 ???
 
-Who has considered WebViews while developing apps or for the web?
+* **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
+* Chair of the W3C WebView Community Group
+* *Who has used WebViews?*
+* *Who has ever thought about WebViews at all?*
 
 ---
 
@@ -170,10 +173,14 @@ Who has considered WebViews while developing apps or for the web?
 1. Documentation and Tooling
 1. Testing the new contender - Servo in Apache Cordova
 1. The future: AI? Mini apps?
-1. Q&A
+1. Questions
 
 
 ???
+
+* Overview of the next few minutes
+* Catch you up on WebViews
+* Think about the future of WebViews
 
 ---
 
@@ -190,10 +197,64 @@ platform or parts of it.
 
 ???
 
-* Embedding of web content in native apps
-* There is a WebView Community Group at W3C
+* WebView Community Group at W3C
 * Long discussion on specifics
-* Maybe we should pick it up again
+* Essentially embedding of web content in native apps
+
+---
+
+class: center, middle
+
+# [Types of WebViews](https://webview-cg.github.io/usage-and-challenges/#types-of-webviews)
+
+Fully fledged
+
+Browser-like
+
+???
+
+* Defined in our useage and challenges Reporting
+* Criteria: UX flexibility, access to web content, state sharing
+
+---
+
+# Android WebView
+
+<img src="img/webview/androidwebview.png" style="max-width: 100%; height: auto;" alt="Screenshot Android WebView">
+
+???
+
+* Native app UI on top
+* Just a rendering view
+* App can mess with the content through webview apis
+
+
+---
+
+# Android Custom Tab
+
+![Screenshot of customtab](img/webview/customtab.png)
+
+???
+
+* Brings UI
+* Can share state with browser
+* More reliably used for browsing
+
+---
+
+# What else is different from browsers?
+
+* They sit beween native and web land
+* Extra considerations required!
+* Not part of web platform tests and interop 
+
+
+???
+
+* Developed by native teams AFAIK
+* More security and compat considerations
+* Not part of interop, yearly browser planning
 
 ---
 
@@ -208,9 +269,9 @@ platform or parts of it.
 ???
 
 * Got in touch with WebViews many years ago
-* Got to solve some interesting problems with them
+* Got to solve some interesting challenges with them
 * They never let me go
-* Some opportunities to improve them came up
+* With the WebView CG I see opportunities to make a difference
 
 ---
 
@@ -221,12 +282,19 @@ experiences today.
 
 https://blog.merzlabs.com/posts/care-about-webviews/
 
+
+* In-app-browsing
+* MiniApps
+* A true cross platform enabler
+
 ???
 
+* Critical component for many apps you might use
 * Easily used without noticing
 * Exposed to security risks
 * In app browsing
 * Mini apps
+* The web is the best cross platform technology we have
 
 ---
 
@@ -235,12 +303,12 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 * Mobile WebViews
   * Android WebView, iOS WKWebView and more
   * **Mini apps**
-  * Hybrid apps: Apache Cordova, Capacitor etc.
+  * Hybrid: Apache Cordova, Capacitor etc.
 * Desktop WebViews
   * Microsoft Edge WebView2
   * macOS WKWebView
   * Linux WebViews (WebKitGTK, QtWebEngine)
-  * Electron, Tauri
+  * Hybrid: Electron, Tauri
 * ...more embedding of the web
 
 ???
@@ -249,7 +317,8 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 * Very different use cases and capabilities
 * Some are for browser like experiences
 * Some are for building apps or parts of apps
-* Fragmentation is a big issue
+* **Fragmentation is a big issue**
+* **webviews are provided by the OS and just used by apps or frameworks**
 
 ---
 
@@ -264,6 +333,9 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 ???
 
 * Reason for forming the CG
+* **Difference in behavior and support for web features**
+* native APIs
+* hard to find out support for new features or nuances of the web
 
 ---
 
@@ -275,20 +347,22 @@ You can't use file:// these days, right?
 
 > https://blog.merzlabs.com/posts/webview-history/
 
+???
+
+* The example I always bring up
+* Coming from using a using a framework like React, Angular or Vue with Cordova
+* use apis from WebView to load local files
+
 ---
 
-### Android
-
-WebViewAssetLoader
+### Android - WebViewAssetLoader
 
 - Register domains
 - https://appassets.androidplatform.net/
 - https://mydomain.com
 - Intercept GET & path
 
-### iOS
-
-WKURLSchemeHandler
+### iOS - WKURLSchemeHandler
 
 - Register custom URL schemes, e.g. app://
 - myapp://appcontent
@@ -297,7 +371,40 @@ WKURLSchemeHandler
 ???
 
 * Good example of platform-specific APIs that do the same thing differently
-* 
+* I spent many hours working finding solutions for problems this caused
+* Boring for most of you, no details
+
+---
+
+# caniwebview.com
+
+### A place for behavioral docs and web feature support
+
+* Writing behavioral docs is hard
+* We still need to gather more information
+
+???
+
+* We started the idea of caniwebview with writing down behavioral disucssions
+* Then also figured out we can easily track web feature support but it's not displayed anywhere
+* Focus on web features now
+* Need help for behavioral docs later
+
+
+---
+
+# A clear picture
+
+<img src="img/webview/caniwebview-baseline.png" style="max-width: 100%; height: auto;" alt="Screenshot caniwebview.com/baseline">
+
+???
+
+* A big reason for the community group is to draw a clear picture
+* web-features earlier today is the one thing thats ready today
+* Looking at web feautures helps us get a picture of where **issues in the web portion** are
+* started with BCD data which is too granular
+* Once we have good data we can start working with vendors and having discussions
+* Great help from Google team on baseline and openwebdocs
 
 ---
 
@@ -310,22 +417,10 @@ WKURLSchemeHandler
 
 ???
 
-* We came to the conclusion that documentation is important
 * Central place to find info on WebView information
-* web-features earlier today is one thing to look at
-
----
-
-# A clear picture?
-
-<img src="img/webview/caniwebview-baseline.png" style="max-width: 100%; height: auto;" alt="Screenshot caniwebview.com/baseline">
-
-???
-
-* Looking at web feautures helps us get a picture of where issues are
-* BCD data is too granualar
-* Once we have good data we can start working with vendors and having disucssions
-* Great help from Google team on baseline and openwebdocs
+* Published apps useful for checking things in webviews
+* Work towards Baseline for WebViews
+* Plans for automated testing
 
 ---
 
@@ -342,8 +437,8 @@ From servo.org
 
 * Current webviews are based on big engines by OS vendors
 * Time to look at alternatives
-* Turbulent history but gaining more traction recently
-* **Focus on embedding makes it perfect for WebViews**
+* servo had a hard start but gaining more traction recently
+* **Recently set focus on embedding which makes it perfect for WebViews**
 
 ---
 
@@ -354,57 +449,90 @@ From servo.org
     * Custom scheme or asset loader
     * Evaluate JavaScript
     * Cookie store
+* First make it work without any Servo modifications
+* Then work with Servo team to build a proper integration
 
 ???
 
-* Thanks to some funding and guidance from NGI Mobifree fund by NLnet I was able to add Servo as WebView option to Apache Cordova Android.
-* Got to work on bringing Servo to Cordova
+* Thanks to some funding and guidance from NGI Mobifree fund by NLnet I got to work on bringing Servo to Cordova.
+* Android at least
 * Cordova back in the day had Crosswalk
+* I've started a plugin that shows it works
+* Notice quickly where servo lacks support for web features
+* Lack of APIs Cordova needs
+* plugin bridge and javascript evaluation
+* First make it work without any Servo modifications
+* continue working with the Servo team
 
 ---
 
 # The Future of WebViews
 
 **Fixing WebViews, improves more than you think**
-* WebViews used in a browsing context
-* Mini apps
+* Security for browsing use
+* Solving Mini App fragmentation?
 * AI-powered apps?
 
 ???
 
 * Fixing WebViews helps mini apps and more
 * AI is everywhere these days
-* Not sure if it stays
-* **Similar way of bridging native and web but AI with the Web?**
+* Not sure if it stays in focus forever
+* **Embedding web component in AI usage**
+* No expert there but another current topic why webviews are important
 
 ---
 
 # Can we fix things?
 
-* It's complicated
-* Big vendors show little interest
-* Being independent is an interesting position
+* I'm not sure but hopeful
+* It's hard to change existing WebViews without breaking things
 * **Documentation, tooling and alternatives**
-* Standards are a far away goal
+* Standards are a distant goal
 
 ???
 
+* **It's hard to change existing WebViews without breaking things**
+* Vendors are moving carefully and have little interest in the standards overhead today
 * Documentation, tooling and alternatives are a good start to show whats possible
 * Join the W3C WebView Community Group
+* Being independent is an interesting position
 
 ---
 
 # We need help!
 
-* Reporting issues
+* Reporting challenges and issues
 * Writing behavioral docs
 * Building WebView APIs for Servo
+
+???
+
+* Writing about WebView issues
+* Writing docs
+* Joining discussions in the CG
+* Bring new ideas
+* Support Servo for WebViews
 
 ---
 
 class: center, middle
 
-# Q&A?
+# The open questions
+
+Any new issues and uses cases not considered, yet?
+
+Could Servo be a viable replacement for what we have today?
+
+Is there a path to standardization?
+
+???
+
+* Let us know
+* **New APIs and Java bindings, iOS?**
+* What could create interest in standardization
+* Business values for standards and WebViews?
+
 
 ---
 
@@ -415,7 +543,7 @@ class: center, middle
 .right-column[
 
 
-This presentation: https://niklas.merz.dev/state-of-webviews
+This presentation: https://niklas.merz.dev/talks/state-of-webviews
 
 
 ]
