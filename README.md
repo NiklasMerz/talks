@@ -1,5 +1,8 @@
 # Talks about WebViews
 
+**[Hacking WebView features for Servo](/hacking-for-webviews.html)** Web Engines Hackfest 2026
+15-17 June | A Coruña, Galicia, Spain
+
 **[State of WebViews at FOSDEM 2026 Browser and web platform devroom](/state-of-webviews.html)** Can we fix things?
 
 **[Web Standards Beyond The Browser](https://webview-cg.github.io/tpac/TPAC-2024/Breakout/StandardsBeyondTheBrowser.html)** hosted breakout session at W3C TPAC September 2024 Anaheim, CA, USA
