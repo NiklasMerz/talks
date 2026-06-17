@@ -159,15 +159,19 @@ class: center, middle
 
 * **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
 * Chair of the W3C WebView Community Group
-* *Who is a WebView user?*
-* Who is a WebView developer?
 * Who is a Servo developer?
+* Who is a WebView developer?
 
 ---
 
 # Notes
 
 https://hackmd.io/@rego/WEH2026-servo-webview/edit
+
+# Presentation
+
+https://niklas.merz.dev/talks/hacking-for-webviews.html
+
 
 ---
 
@@ -190,8 +194,8 @@ https://hackmd.io/@rego/WEH2026-servo-webview/edit
 
 * Some context on WebViews and their demands for browser engines
 * I'll just give an intro and then need everyone of you to design the Servo features and start building
-* I'm not a Servo or Rust developer at all
-* Just a user
+* I'm not a Servo or Rust developer at all **yet?**
+* Just a user that can ask for stuff
 * Gonna ask a bunch of questions and need your answers and contributions
 * Look at ServoView and what we could add to it to make it a good WebView for hybrid apps
 * Interactive session, please ask questions and share comments
@@ -200,7 +204,7 @@ https://hackmd.io/@rego/WEH2026-servo-webview/edit
 
 # What is a WebView?
 
-[W3C WebView Community Group](https://www.w3.org/community/webview/)
+[W3C WebView Community Group](https://webview-cg.github.io/usage-and-challenges/#webviews)
 
 > Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
 
@@ -231,18 +235,18 @@ From servo.org
 * It's hard to make changes to existing WebViews
 * Great opportunity to get a new cross platform WebView
 * Competition is good
-* Learn from existing and best of all worlds
+* Learn from best of all worlds
 * Design something new
 
 ---
 
-# BCD & caniwebview.com
+# caniwebview.com
 
 ### Documentation what is supported in WebViews
 
 <img src="img/webview/servocaniwebview.png" style="max-width: 100%; height: auto;" alt="Screenshot Servo on CanIWebView">
 
-Something like https://wpewebkit.org/wpt-status for Servo would be great!
+Something like https://wpewebkit.org/wpt-status with bcd-collector results for Servo would be great!
 
 ???
 
@@ -306,6 +310,7 @@ Something like https://wpewebkit.org/wpt-status for Servo would be great!
 
 * Cookie Manager
 * Binary size
+* WebViews for more platforms?: iOS, OpenHarmony, Desktop....
 * Anything else you need for you embedding use case?
 
 ???
@@ -377,6 +382,21 @@ servo: Add bidirectional message ports to public embedding API. [40513](https://
 ???
 
 * WKWebView randomly clears cookies and storage
+
+---
+
+# The bigger picture
+
+**What makes the web great is collaboration, multiple implementations and cross review.**
+
+The web outside the browser lacks some of that. Can we change that?
+
+https://bit.ly/web-embedding
+
+???
+
+* This fits into a bigger picture of embedding I'm currently investigating
+
 
 ---
 
