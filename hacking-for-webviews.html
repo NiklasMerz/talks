@@ -159,7 +159,9 @@ class: center, middle
 
 * **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
 * Chair of the W3C WebView Community Group
-* *Who has used WebViews?*
+* *Who is a WebView user?*
+* Who is a WebView developer?
+* Who is a Servo developer?
 
 ---
 
@@ -190,7 +192,8 @@ https://hackmd.io/@rego/WEH2026-servo-webview/edit
 * I'll just give an intro and then need everyone of you to design the Servo features and start building
 * I'm not a Servo or Rust developer at all
 * Just a user
-* Then look at ServoView and what we could add to it to make it a good WebView for hybrid apps
+* Gonna ask a bunch of questions and need your answers and contributions
+* Look at ServoView and what we could add to it to make it a good WebView for hybrid apps
 * Interactive session, please ask questions and share comments
 
 ---
@@ -210,7 +213,7 @@ platform or parts of it.
 
 * WebView Community Group at W3C
 * Long discussion on specifics
-* Essentially embedding of web content in native apps
+* Essentially embedding of web content
 
 ---
 
@@ -226,10 +229,10 @@ From servo.org
 ???
 
 * It's hard to make changes to existing WebViews
-* **Recently set focus on embedding which makes it perfect for WebViews**
-* Big opportunity to get a new cross platform WebView
+* Great opportunity to get a new cross platform WebView
 * Competition is good
 * Learn from existing and best of all worlds
+* Design something new
 
 ---
 
@@ -256,8 +259,8 @@ Something like https://wpewebkit.org/wpt-status for Servo would be great!
 * Injecting JS & CSS
 * Two way communication between native and web code
 * Sharing state (cookies, storage) between WebView windows
-* Controll over statusbar
 * Safe pause & resume
+* Controll over statusbar & frame
 
 ???
 
@@ -270,11 +273,11 @@ Something like https://wpewebkit.org/wpt-status for Servo would be great!
 
 * Servo is easy to add to an Android app!
 * Cordova platforms have support for different engines
-* ServoView lacks features other WebViews have
+* ServoView is missing features other WebViews have
 * Custom scheme or asset loader
 * Evaluate JavaScript
 * Cookie store
-* First make it work without any Servo modifications
+* First make it work without any Servo modifications **-> Lots of Hacks**
 * Then work with Servo team to build a proper integration
 
 ???
@@ -287,8 +290,31 @@ Something like https://wpewebkit.org/wpt-status for Servo would be great!
 * Notice quickly where servo lacks support for web features
 * Lack of APIs Cordova needs
 * plugin bridge and javascript evaluation
-* First make it work without any Servo modifications
+* First make it work without any Servo modifications **-> Lots of Hacks**
 * continue working with the Servo team
+
+---
+
+# Hacking
+
+### Bring existing features to Java API to make it accessible to WebView developers on Android
+
+1. registerProtocolHandler for Java [#42624](https://github.com/servo/servo/issues/42624)
+1. Execute JavaScript [#41654](https://github.com/servo/servo/issues/41654)
+
+### New Challenges
+
+* Cookie Manager
+* Binary size
+* Anything else you need for you embedding use case?
+
+???
+
+* I created two issues for features that I found missing when trying to use Servo in Cordova with Java
+* Anyone familiar with these issues?
+* What do you think we could work on? 
+* What's a small issues and what needs a bigger design discussion?
+* What are roadblocks?
 
 ---
 
@@ -305,28 +331,6 @@ You can't use file:// these days, right?
 * The example I always bring up
 * Coming from using a using a framework like React, Angular or Vue with Cordova
 * Use apis from WebView to load local files
-
----
-
-# Hacking
-
-### Bring existing features to Java API to make it accessible to WebView developers on Android
-
-1. registerProtocolHandler for Java [#42624](https://github.com/servo/servo/issues/42624)
-1. Execute JavaScript [#41654](https://github.com/servo/servo/issues/41654)
-
-### Design and build new APIs
-
-* Cookie Manager
-* Anything else you need for you embedding use case?
-
-???
-
-* I created two issues for features that I found missing when trying to use Servo in Cordova with Java
-* Anyone familiar with these issues?
-* What do you think we could work on? 
-* What's a small issues and what needs a bigger design discussion?
-* What are roadblocks?
 
 ---
 
@@ -390,6 +394,8 @@ This presentation: https://niklas.merz.dev/talks/hacking-for-webviews.html
 **Everything Embedding The Web**
 
 The [W3C WebView Community Group](https://www.w3.org/community/webview/)
+
+-------------------
 
 niklasmerz@apache.org
 
