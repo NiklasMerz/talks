@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>State of WebViews - Focus on Security</title>
+    <meta charset="utf-8">
+    <style>
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+      }
+      
+      h1, h2, h3 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700;
+        color: #733d9d;
+      }
+      
+      h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+      }
+      
+      h2 {
+        font-size: 2em;
+        margin-top: 0.8em;
+      }
+      
+      h3 {
+        font-size: 1.5em;
+        color: #ff6600;
+      }
+      
+      .remark-slide-content {
+        background-color: #fff;
+        font-size: 1.5em;
+        padding: 1em 2em;
+      }
+      
+      .remark-slide-content h1 {
+        color: #733d9d;
+      }
+      
+      /* Center and middle slides */
+      .center.middle h1 {
+        margin-bottom: 0.3em;
+      }
+      
+      .center.middle h2 {
+        color: #555;
+        font-weight: 400;
+        font-size: 1.8em;
+      }
+      
+      .center.middle h4 {
+        color: #ff6600;
+        font-weight: 600;
+        font-size: 1.2em;
+      }
+      
+      /* Links */
+      a, a:visited {
+        color: #733d9d;
+        text-decoration: none;
+        border-bottom: 2px solid #ff6600;
+      }
+      
+      a:hover {
+        color: #ff6600;
+        border-bottom-color: #733d9d;
+      }
+      
+      /* Code styling */
+      .remark-code, .remark-inline-code { 
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+        background-color: #f5f5f5;
+        border-radius: 3px;
+      }
+      
+      .remark-inline-code {
+        padding: 2px 6px;
+        color: #733d9d;
+      }
+      
+      .remark-code {
+        background-color: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1em;
+        border-left: 4px solid #ff6600;
+      }
+      
+      /* Lists */
+      ul, ol {
+        line-height: 1.6;
+      }
+      
+      li {
+        margin-bottom: 0.5em;
+      }
+      
+      strong {
+        color: #733d9d;
+        font-weight: 700;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #666;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      
+      .left-column h2:last-of-type, 
+      .left-column h3:last-child {
+        color: #733d9d;
+      }
+      
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      /* Images */
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+      
+      /* Slide number */
+      .remark-slide-number {
+        color: #999;
+        font-size: 0.8em;
+      }
+      
+      /* Blockquotes */
+      blockquote {
+        border-left: 4px solid #733d9d;
+        padding-left: 1em;
+        margin-left: 0;
+        font-style: italic;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# State of WebViews - Can we fix things?
+
+## Niklas Merz
+
+#### W3C WebView Community Group & Apache Cordova
+
+???
+
+* **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
+* Chair of the W3C WebView Community Group
+* *Who has used WebViews?*
+* *Who has ever thought about WebViews at all?*
+
+---
+
+# Agenda
+
+1. What is a WebView?
+1. Why do I care about WebViews
+1. Why you should care about WebViews
+1. W3C WebView Community Group
+1. The State of WebViews
+1. Documentation and Tooling
+1. The future: AI? Mini apps?
+1. Questions
+
+
+???
+
+* Overview of the next few minutes
+* Catch you up on WebViews
+* Think about the future of WebViews
+
+---
+
+# What is a WebView?
+
+[W3C WebView Community Group](https://www.w3.org/community/webview/)
+
+> Software components that are used to render Web technology-based content outside of a Web browser (Native Apps, MiniApps, etc).
+
+[User Agent finding from W3C TAG](https://w3ctag.github.io/user-agents/#ua-as-software) 
+
+> As software components, user agents can be parts of larger applications and can call libraries that implement the web
+platform or parts of it.
+
+???
+
+* WebView Community Group at W3C
+* Long discussion on specifics
+* Essentially embedding of web content in native apps
+
+---
+
+class: center, middle
+
+# [Types of WebViews](https://webview-cg.github.io/usage-and-challenges/#types-of-webviews)
+
+Fully fledged
+
+Browser-like
+
+???
+
+* Defined in our useage and challenges Reporting
+* Criteria: UX flexibility, access to web content, state sharing
+
+---
+
+# What else is different from browsers?
+
+* They sit beween native and web land
+* Extra considerations required!
+* Not part of web platform tests and interop 
+
+
+???
+
+* Developed by native teams AFAIK
+* More security and compat considerations
+* Not part of interop, yearly browser planning
+
+---
+
+# Why do I care about WebViews?
+
+* App developer
+* Cordova Hacker
+* Cordova Maintainer
+* WebView Community Group Member
+* WebView Community Group Chair
+
+???
+
+* Got in touch with WebViews many years ago
+* Got to solve some interesting challenges with them
+* With the WebView CG I see opportunities to make a difference
+
+---
+
+# Why you should care about WebViews
+
+> WebViews are more than just a bridge between native and web. They are a critical component of many digital user
+experiences today.
+
+https://blog.merzlabs.com/posts/care-about-webviews/
+
+
+* In-app-browsing
+* MiniApps
+* A true cross platform enabler
+
+???
+
+* Critical component for many apps you might use
+* Easily used without noticing
+* Exposed to security risks
+* In app browsing
+* Mini apps
+* The web is the best cross platform technology we have
+
+---
+
+# W3C WebView Community Group
+
+> The WebViews Community Group aims to identify, understand and reduce the issues arising from the use of software
+components
+
+MiniApps Working Group and Community group recently closed and interested parties are encouraged to join the WebView Community Group.
+
+---
+
+# State of WebViews
+
+* Mobile WebViews
+  * Android WebView, iOS WKWebView and more
+  * **Mini apps**
+  * Hybrid: Apache Cordova, Capacitor etc.
+* Desktop WebViews
+  * Microsoft Edge WebView2
+  * macOS WKWebView
+  * Linux WebViews (WebKitGTK, QtWebEngine)
+  * Hybrid: Electron, Tauri
+* ...more embedding of the web
+
+???
+
+* Lots of different WebViews out there
+* Very different use cases and capabilities
+* Some are for browser like experiences
+* Some are for building apps or parts of apps
+* **Fragmentation is a big issue**
+* **webviews are provided by the OS and just used by apps or frameworks**
+
+---
+
+# Pain points for developers
+
+* Inconsistent support for web features
+* Platform-specific APIs that basically do the same thing differently
+  * Loading files from the app bundle
+  * Cookie handling
+  * Permissions
+* Very little security guidance
+
+???
+
+* Reason for forming the CG
+* **Difference in behavior and support for web features**
+* native APIs
+* hard to find out support for new features or nuances of the web
+* Documentation lacking from experience in Cordova
+
+---
+
+# caniwebview.com
+
+### A place for behavioral docs and web feature support
+
+* Writing behavioral docs is hard
+* We still need to gather more information
+* Previous focus was on compatibility data
+* Adding security explicitely to our scope
+
+???
+
+* We started the idea of caniwebview with writing down behavioral disucssions
+* Then also figured out we can easily track web feature support but it's not displayed anywhere
+* Need help for security aspects
+
+
+---
+
+# The Future of WebViews
+
+**Fixing WebViews, improves more than you think**
+* Security for browsing use
+* Solving Mini App fragmentation?
+* AI-powered apps?
+
+???
+
+* Fixing WebViews helps mini apps and more
+* AI is everywhere these days
+* Not sure if it stays in focus forever
+* **Embedding web component in AI usage**
+* No expert there but another current topic why webviews are important
+
+---
+
+# Look at security
+
+* Draft document
+* Threat modeling with W3C
+* Collecting research, information and best practices
+
+???
+
+
+---
+
+# We need help!
+
+* Reporting challenges and issues
+* Researching and documenting security aspects
+* Writing behavioral docs
+
+???
+
+* Writing about WebView issues
+* Writing docs
+* Joining discussions in the CG
+* Bring new ideas
+* Threat modelling
+
+---
+
+class: center, middle
+
+# The open questions
+
+Any new issues and uses cases not considered, yet?
+
+Is there a path to standardization?
+
+???
+
+* Let us know
+* What could create interest in standardization
+* Business values for standards and WebViews?
+
+
+---
+
+.left-column[
+  ## Thanks!
+]
+
+.right-column[
+
+
+This presentation: https://niklas.merz.dev/talks/state-of-webview-security
+
+
+]
+
+
+    </textarea>
+    <script src="remark.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

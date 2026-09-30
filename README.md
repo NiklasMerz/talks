@@ -1,5 +1,8 @@
 # Talks about WebViews
 
+**[State of WebViews - Focus on Security](/state-of-webview-security.html)** ACM Workshop on Security and Safety of AI-Empowered Mobile Super Apps (SaTS ’26)
+November 19th, 2026 | The Hague, The Netherlands.
+
 **[Hacking WebView features for Servo](/hacking-for-webviews.html)** Web Engines Hackfest 2026
 15-17 June | A Coruña, Galicia, Spain
 
