@@ -1,6 +1,6 @@
 # Talks about WebViews
 
-**[State of WebViews - Focus on Security](/state-of-webview-security.html)** ACM Workshop on Security and Safety of AI-Empowered Mobile Super Apps (SaTS ’26)
+**[State of WebViews - From compatibility, to security and beyond.](/state-of-webview-security.html)** ACM [Workshop on Security and Safety of AI-Empowered Mobile Super Apps (SaTS ’26)](https://superappsec.github.io)
 November 19th, 2026 | The Hague, The Netherlands.
 
 **[Hacking WebView features for Servo](/hacking-for-webviews.html)** Web Engines Hackfest 2026
@@ -10,7 +10,7 @@ November 19th, 2026 | The Hague, The Netherlands.
 
 **[Web Standards Beyond The Browser](https://webview-cg.github.io/tpac/TPAC-2024/Breakout/StandardsBeyondTheBrowser.html)** hosted breakout session at W3C TPAC September 2024 Anaheim, CA, USA
 
-**[WebView CG Meetings at TPAC](https://github.com/webView-CG/tpac?tab=readme-ov-file#webviewcg-meetings)** hosted meetings as Co-Chair of WebView CG
+**[WebView CG Meetings at TPAC](https://webview-cg.github.io/tpac/)** hosted meetings as Co-Chair of WebView CG
 
 # Talks about open source
 
