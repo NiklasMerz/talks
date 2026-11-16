@@ -159,19 +159,18 @@ class: center, middle
 
 * **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
 * Chair of the W3C WebView Community Group
-* *Who has used WebViews?*
-* *Who has ever thought about WebViews at all?*
+* **Who** is not happy with the state of WebViews?
 
 ---
 
 # Agenda
 
-1. Recap on WebViews
+1. Overview
 1. W3C WebView Community Group
 1. The State of WebViews
 1. Let's look at security
 1. The future for WebViews & the community
-1. Questions
+1. Discussion
 
 
 ???
@@ -179,6 +178,20 @@ class: center, middle
 * Overview of the next few minutes
 * Catch you up on WebViews
 * Think about the future of WebViews
+
+---
+
+# Why?
+
+* Learn
+* Connect communities
+* The AI part
+
+???
+
+Why am I here?
+
+Learn more about Super apps and security there
 
 ---
 
@@ -209,6 +222,8 @@ Fully fledged
 
 Browser-like
 
+Provided by the operating system or bundled
+
 ???
 
 * Defined in our useage and challenges Reporting
@@ -219,8 +234,8 @@ Browser-like
 # What else is different from browsers?
 
 * They sit beween native and web land
-* Extra considerations required!
-* Not part of web platform tests and interop 
+* Extra considerations for building and using WebViews
+* Not part of web platform tests and interop
 
 
 ???
@@ -278,7 +293,7 @@ components
 
 MiniApps Working Group recently closed and interested parties are encouraged to join the WebView Community Group.
 
-Please help us!
+Please join us!
 
 ---
 
@@ -302,7 +317,7 @@ Please help us!
 * Some are for browser like experiences
 * Some are for building apps or parts of apps
 * **Fragmentation is a big issue**
-* **webviews are provided by the OS and just used by apps or frameworks**
+* **WebViews are provided by the OS and just used by apps or frameworks**
 
 ---
 
@@ -313,7 +328,7 @@ Please help us!
   * Loading files from the app bundle
   * Cookie handling
   * Permissions
-* Very little security guidance
+* Very little security awareness
 
 ???
 
@@ -338,24 +353,111 @@ Please help us!
 
 * We started the idea of caniwebview with writing down behavioral disucssions
 * Then also figured out we can easily track web feature support but it's not displayed anywhere
-* Need help for security aspects
-
+* Adapted tools used for browsers like BCD, web-features and Baseline
 
 ---
 
-# A deeper look at security
+# Advice for Super & Mini Apps
 
-* Draft document
+* Work on common documentation and best practices guides
+* Figure out gaps and similarities
+      * Martin Alavarez presented [research](https://espinr.github.io/talks/2025/1112-Modular-Web-Engines-TPAC/)
+* Find paths to standardization
+
+???
+
+* People appreciate caniwebview to check references
+* If you have found paths to standardization, share them with me for WebViews
+
+---
+
+# A look at security
+
+* [The WebView Basic Guide](https://caniwebview.com/guide)
+* [Draft Security Guidance](https://webview-cg.github.io/webview-security/)
 * Threat modeling with W3C
 * Collecting research, information and best practices
 
 ???
 
+* It's hard to figure out how to use WebViews securely
+* We just got started with security in WebView CG
+* I drafted some guides for users and developers
+
+---
+
+# The Basics
+
+* Choose the right type of WebView
+* Limit navigation
+* Disable unnecessary features
+* Handle permissions carefully
+* **Secure the native bridge!**
+
+---
+
+# Validation gone wrong
+
+## CVE-2026-47430 - CVSS-B 9.5 CRITICAL
+
+The iOS implementation of cordova-plugin-inappbrowser passes the id field from a WKScriptMessage body to commandDelegate
+sendPluginResult:callbackId: with no format validation (CDVWKInAppBrowser.m:560–574). Any web content loaded inside the
+InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose id field is a guessable or
+enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback
+IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable
+payloads targeting widely-adopted plugins.
+
+???
+
+* In the code for 7 years
+* Validated on the Android platform
+* Refactoring gone wrong
+* **Easy to miss**
+
+---
+
+# [How WebViews diverge](https://webview-cg.github.io/webview-security/)
+
+> Documention on how WebViews diverge conceptually from security concepts, user agent duties and practices defined for
+browsers.
+
+---
+
+Some features may not be available in WebViews
+
+* Service Workers in WKWebView are restricted to App Bound Domains
+
+---
+
+WebViews can be configured differently
+
+---
+
+The host app has control over the web content
+  * JavaScript insertion and execution
+  * Network requests can be intercepted and modified
+  * Cookies and storage can be accessed and modified
+  * CSS can be modified
+  * Granting permissions
+
+---
+
+# Modern Web Guidance
+
+> Modern Web Guidance is a set of skills that embed web platform expertise, best practices, and browser compatibility data
+directly into your coding agents.
+
+[https://developer.chrome.com/docs/modern-web-guidance](https://developer.chrome.com/docs/modern-web-guidance)
+
+???
+
+Tooling released by Chrome inspiration for WebView and MiniApps
+
 ---
 
 # The Future of WebViews
 
-**Fixing WebViews, improves more than you think**
+**Fixing things in WebViews, improves more than you think**
 * Security for browsing use
 * Solving Mini App fragmentation?
 * AI-powered apps?
@@ -374,8 +476,9 @@ Please help us!
 # We need help!
 
 * Reporting challenges and issues
-* Researching and documenting security aspects
+* **Researching and documenting security**
 * Writing behavioral docs
+* Contribute ideas and ressources for standardization
 
 ???
 
@@ -389,11 +492,13 @@ Please help us!
 
 class: center, middle
 
-# The open questions
-
-Any new issues and uses cases not considered, yet?
+# Discussion
 
 Is there a path to standardization?
+
+Collaboration between WebViews, MiniApps, Super Apps and Embeeded
+
+
 
 ???
 
@@ -410,6 +515,9 @@ Is there a path to standardization?
 
 .right-column[
 
+Get in touch:
+- Email: niklasmerz@apache.org
+- Mastodon: https://w3c.social/@niklasmerz
 
 This presentation: https://niklas.merz.dev/talks/state-of-webview-security
 
