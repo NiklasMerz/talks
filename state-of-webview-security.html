@@ -193,6 +193,10 @@ Why am I here?
 
 Learn more about Super apps and security there
 
+Find out how WebViews are used
+
+Find out what is done differently compared to web
+
 ---
 
 # What is a WebView?
@@ -222,39 +226,29 @@ collective discussions and embodied in the various standards that user agents im
 
 ???
 
-It should follow the duties and serve its users
+* Good to remind everyone
+* It should follow the duties and serve its users
+* The user agent finding by TAG is a good read
+* Find out what could be better
 
 ---
 
 class: center, middle
 
 # [Types of WebViews](https://webview-cg.github.io/usage-and-challenges/#types-of-webviews)
+      
+## Fully fledged vs browser-like
 
-Fully fledged
+Tradeoff between control, capabilities, and security
 
-Browser-like
+## Provided by the operating system vs bundled
 
-Provided by the operating system or bundled
+Tradeoff between regular updates, consistency, and performance
 
 ???
 
-* Defined in our useage and challenges Reporting
+* Defined in our usage and challenges report
 * Criteria: UX flexibility, access to web content, state sharing
-
----
-
-# What else is different from browsers?
-
-* They sit beween native and web land
-* Extra considerations for building and using WebViews
-* Not part of web platform tests and interop
-
-
-???
-
-* Developed by native teams AFAIK
-* More security and compat considerations
-* Not part of interop, yearly browser planning
 
 ---
 
@@ -293,7 +287,7 @@ https://blog.merzlabs.com/posts/care-about-webviews/
 * Easily used without noticing
 * Exposed to security risks
 * In app browsing
-* Mini apps
+* Used for mini apps in some form or not
 * The web is the best cross platform technology we have
 
 ---
@@ -344,8 +338,7 @@ Please join us!
 
 ???
 
-* Reason for forming the CG
-* **Difference in behavior and support for web features**
+**Difference in behavior and support for web features**
 * native APIs
 * hard to find out support for new features or nuances of the web
 * Documentation lacking from experience in Cordova
@@ -369,15 +362,20 @@ Please join us!
 
 ---
 
-# Advice for Super & Mini Apps
+# Learnings
 
-* Work on common documentation and best practices guides
 * Figure out gaps and similarities
       * Martin Alavarez presented [research](https://espinr.github.io/talks/2025/1112-Modular-Web-Engines-TPAC/)
+* Compatibility tools are very helpful
+      * BCD (Browser Compatibility Data)
+      * Web-Features
+      * Baseline
+* Build a place to share documentation, guides and best practices
 * Find paths to standardization
 
 ???
 
+**I'd like to share some learnings for other communities to adopt**
 * People appreciate caniwebview to check references
 * If you have found paths to standardization, share them with me for WebViews
 
@@ -435,22 +433,59 @@ browsers.
 
 ---
 
-Some features may not be available in WebViews
+# Some features may not be available in WebViews
 
-* Service Workers in WKWebView are restricted to App Bound Domains
+<img src="img/webview/caniwebview-baseline.png" style="max-width: 100%; height: auto;"
+  alt="Screenshot caniwebview.com/baseline">
+
+???
+
+**Everything is supported like in the browser except when it's not**
+* Service Workers on WKWebView are restricted to App Bound Domains
 
 ---
 
-WebViews can be configured differently
+# WebViews can be configured differently
+
+* Disable JavaScript
+* Limit navigation
+* No permission UI
+* Storage & state sharing
+
 
 ---
 
-The host app has control over the web content
-  * JavaScript insertion and execution
-  * Network requests can be intercepted and modified
-  * Cookies and storage can be accessed and modified
-  * CSS can be modified
-  * Granting permissions
+# The host app has control over the web content
+
+* JavaScript insertion and execution
+* Network requests can be intercepted and modified
+* Cookies and storage can be accessed and modified
+* CSS can be modified
+* Granting permissions
+
+---
+
+class: center, middle
+
+# The simple picture
+
+![Simple Architecture](img/webview/simple-architecture.svg)
+
+
+???
+
+**We need a better diagram**
+
+* Normally the user is in control of permissions, here it's the host app
+* The host interacts with JS & storage unlike browsers
+
+---
+
+# Security Focus
+
+* Advice for users
+* Help developers use WebViews securely
+* Find issues that could be addressed by the providers
 
 ---
 
@@ -478,10 +513,8 @@ Tooling released by Chrome inspiration for WebView and MiniApps
 
 * Fixing WebViews helps mini apps and more
 * AI is everywhere these days
-* Not sure if it stays in focus forever
 * **Embedding web component in AI usage**
 * No expert there but another current topic why webviews are important
-
 
 ---
 
