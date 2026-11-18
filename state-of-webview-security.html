@@ -159,7 +159,6 @@ class: center, middle
 
 * **Maintainer of Apache Cordova which uses WebViews for cross platform mobile apps**
 * Chair of the W3C WebView Community Group
-* **Who** is not happy with the state of WebViews?
 
 ---
 
@@ -177,6 +176,8 @@ class: center, middle
 
 * Overview of the next few minutes
 * Catch you up on WebViews
+* Talk about the community
+* Focus on security
 * Think about the future of WebViews
 
 ---
@@ -196,6 +197,10 @@ Learn more about Super apps and security there
 Find out how WebViews are used
 
 Find out what is done differently compared to web
+
+Connect communities
+
+AI usage
 
 ---
 
@@ -226,10 +231,9 @@ collective discussions and embodied in the various standards that user agents im
 
 ???
 
+* Mentioned user agent finding by TAG
 * Good to remind everyone
 * It should follow the duties and serve its users
-* The user agent finding by TAG is a good read
-* Find out what could be better
 
 ---
 
@@ -334,14 +338,16 @@ Please join us!
   * Loading files from the app bundle
   * Cookie handling
   * Permissions
-* Very little security awareness
+* Security easily done wrong
 
 ???
 
 **Difference in behavior and support for web features**
 * native APIs
-* hard to find out support for new features or nuances of the web
+* hard to find out support for new features or nuances of the **web-features**
 * Documentation lacking from experience in Cordova
+* Security awareness
+* Security easily done wrong
 
 ---
 
@@ -356,80 +362,9 @@ Please join us!
 
 ???
 
-* We started the idea of caniwebview with writing down behavioral disucssions
+* We started the idea of caniwebview with writing down behavioral docs
 * Then also figured out we can easily track web feature support but it's not displayed anywhere
 * Adapted tools used for browsers like BCD, web-features and Baseline
-
----
-
-# Learnings
-
-* Figure out gaps and similarities
-      * Martin Alavarez presented [research](https://espinr.github.io/talks/2025/1112-Modular-Web-Engines-TPAC/)
-* Compatibility tools are very helpful
-      * BCD (Browser Compatibility Data)
-      * Web-Features
-      * Baseline
-* Build a place to share documentation, guides and best practices
-* Find paths to standardization
-
-???
-
-**I'd like to share some learnings for other communities to adopt**
-* People appreciate caniwebview to check references
-* If you have found paths to standardization, share them with me for WebViews
-
----
-
-# A look at security
-
-* [The WebView Basic Guide](https://caniwebview.com/guide)
-* [Draft Security Guidance](https://webview-cg.github.io/webview-security/)
-* Threat modeling with W3C
-* Collecting research, information and best practices
-
-???
-
-* It's hard to figure out how to use WebViews securely
-* We just got started with security in WebView CG
-* I drafted some guides for users and developers
-
----
-
-# The Basics
-
-* Choose the right type of WebView
-* Limit navigation
-* Disable unnecessary features
-* Handle permissions carefully
-* **Secure the native bridge!**
-
----
-
-# Validation gone wrong
-
-## CVE-2026-47430 - CVSS-B 9.5 CRITICAL
-
-The iOS implementation of cordova-plugin-inappbrowser passes the id field from a WKScriptMessage body to commandDelegate
-sendPluginResult:callbackId: with no format validation (CDVWKInAppBrowser.m:560–574). Any web content loaded inside the
-InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose id field is a guessable or
-enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback
-IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable
-payloads targeting widely-adopted plugins.
-
-???
-
-* In the code for 7 years
-* Validated on the Android platform
-* Refactoring gone wrong
-* **Easy to miss**
-
----
-
-# [How WebViews diverge](https://webview-cg.github.io/webview-security/)
-
-> Documention on how WebViews diverge conceptually from security concepts, user agent duties and practices defined for
-browsers.
 
 ---
 
@@ -465,6 +400,136 @@ browsers.
 
 ---
 
+# Learnings
+
+* Figure out gaps and similarities
+      * Martin Alavarez presented [research](https://espinr.github.io/talks/2025/1112-Modular-Web-Engines-TPAC/)
+* Compatibility tools are very helpful
+      * BCD (Browser Compatibility Data)
+      * Web-Features
+      * Baseline
+* Build a place to share documentation, guides and best practices
+* Find paths to standardization
+
+???
+
+**I'd like to share some learnings for other communities to adopt**
+* People appreciate caniwebview to check references
+* If you have found paths to standardization, share them with me for WebViews
+
+---
+
+class: center, middle
+
+# Security for WebViews
+
+---
+
+# WebView Security gone wrong
+
+## Cordova InAppBrowser Plugin
+
+* **Developers build cross-platform apps with Cordova and add plugins**
+* InAppBrowser plugin adds a second WebView to a Cordova app
+* Built before Custom Tabs & SFSafariViewController
+* WebView used for the wrong purpose
+
+???
+
+Great example from Cordova about WebView security
+
+Put web content in apps and call plugins with native features using JS
+
+We know it's not good, stil supported and widely used
+
+---
+
+# Validation gone wrong
+
+## CVE-2026-47430 - CVSS-B 9.5 CRITICAL
+
+The iOS implementation of cordova-plugin-inappbrowser passes the id field from a WKScriptMessage body to commandDelegate
+sendPluginResult:callbackId: with no format validation (CDVWKInAppBrowser.m:560–574). Any web content loaded inside the
+InAppBrowser can fire any pending Cordova callback in the host app by posting a message whose id field is a guessable or
+enumerated callback identifier. An attack abusing this weakness must be tailored to the specific plugins and callback
+IDs the host app uses. Though an attacker with knowledge of common Cordova plugin configurations could craft reusable
+payloads targeting widely-adopted plugins.
+
+???
+
+* In the code for 7 years
+* Validated only on the Android platform
+
+---
+
+# Cordova plugins
+
+* Plugins register callbacks that get ids like InAppBrowser1234567
+* Plugin framework uses ids to match between registered JS callbacks and native code
+* InAppBrowser registers one callback for its events (loadstart, loadstop, exit, …) plus one per executeScript/insertCSS
+call.
+
+---
+
+# Forgotten validation in InAppBrowser
+
+* `window.webkit.messageHandlers.cordova_iab.postMessage` can be executed within a IAB WebView
+* Android has some validation to allow only InAppBrowser callbacks not arbitrary ones
+* No validation code was added for WKWebView
+* Theoretically guessing callback ids of other plugins is possible
+* Attackers could gain access to pending callbacks
+
+???
+
+Fun fact Phonegap, Callback, Cordova
+
+Easy fix, easy to forget
+
+**This type of issue could be many applications of WebView**
+
+---
+
+# Security at WebView CG
+
+* Added to the [charter](https://github.com/WebView-CG/charter/commit/294c7a6a8403e37d3a95f5ca4f3358460ebba9b7)
+* [The WebView Basic Guide](https://caniwebview.com/guide)
+* [Draft Security Guidance](https://webview-cg.github.io/webview-security/)
+* Threat modeling with W3C threat modeling group
+* Working on documentation and best practices
+
+???
+
+**New workstream for WebView CG, security is everywhere these days**
+* It's hard to figure out how to use WebViews securely
+* We just got started with security in WebView CG
+* I drafted some guides for users and developers
+
+---
+
+# The Basics
+
+* Choose the right type of WebView
+* Limit navigation
+* Disable unnecessary features
+* Handle permissions carefully
+* **Secure the native bridge!**
+
+---
+
+# [How WebViews diverge](https://webview-cg.github.io/webview-security/)
+
+Documention on how WebViews diverge conceptually from security concepts, user agent duties and practices defined for
+browsers.
+
+* [User Agents](https://www.w3.org/TR/user-agents/)
+
+* [Web Platform Design Principles](https://www.w3.org/TR/design-principles/)
+
+* [Threat Model for the Web](https://www.w3.org/TR/threat-model-web/)
+
+
+---
+
 class: center, middle
 
 # The simple picture
@@ -481,14 +546,6 @@ class: center, middle
 
 ---
 
-# Security Focus
-
-* Advice for users
-* Help developers use WebViews securely
-* Find issues that could be addressed by the providers
-
----
-
 # Modern Web Guidance
 
 > Modern Web Guidance is a set of skills that embed web platform expertise, best practices, and browser compatibility data
@@ -502,12 +559,49 @@ Tooling released by Chrome inspiration for WebView and MiniApps
 
 ---
 
+# Security focus
+
+* Practical advice
+* Documentation & tooling to help users and developers
+* Help developers to build for WebViews securely
+* **Highlight room for improvement**
+      * Identify gaps between implementation
+      * Highlight what could be addressed by providers
+      * Potential standards
+
+???
+
+**Just like for compatibility**
+
+---
+
+class: center, middle
+
+# Beyond
+
+---
+
+# Accessibility
+
+* WebViews might introduce additional barriers for assistive technology
+* Super Apps & Mini Apps buitl with accessibility in mind?
+* Mobile Accessibility Task Force
+
+???
+
+Another topic to raise because we got in touch at TPAC
+
+Haven't looked at the accessibility support in WebViews in detail yet
+
+---
+
 # The Future of WebViews
 
-**Fixing things in WebViews, improves more than you think**
+**Making a difference in WebViews, improves more than you think**
 * Security for browsing use
+* Performance & light-weight WebViews
 * Solving Mini App fragmentation?
-* AI-powered apps?
+* AI-powered apps
 
 ???
 
@@ -518,17 +612,35 @@ Tooling released by Chrome inspiration for WebView and MiniApps
 
 ---
 
+# The future of the community
+
+* WebView CG is open for Super Apps, Mini Apps and more
+* Connect with embedding
+* Form a new group at the W3C?
+* **Start with a small common goal to solve together**
+
+???
+
+Looking for formats to connect
+
+We see the need but it's hard to find common goals and investments
+
+---
+
 # We need help!
 
+* Connect super apps and WebView community
 * Reporting challenges and issues
 * **Researching and documenting security**
 * Writing behavioral docs
 * Contribute ideas and ressources for standardization
+* Who wants to do contribute to thread modelling?
 
 ???
 
+* **Educating on Super- & MiniApps**
 * Writing about WebView issues
-* Writing docs
+* Writing docs how webview **really work**
 * Joining discussions in the CG
 * Bring new ideas
 * Threat modelling
@@ -541,7 +653,7 @@ class: center, middle
 
 Is there a path to standardization?
 
-Collaboration between WebViews, MiniApps, Super Apps and Embeeded
+How to foster collaboration between WebViews, MiniApps, Super Apps and Embeeded?
 
 
 
