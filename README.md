@@ -1,16 +1,17 @@
 # Talks about WebViews
 
+**[WebView CG Meetings at TPAC](https://webview-cg.github.io/tpac/)** hosted meetings as Co-Chair of WebView CG
+
 **[State of WebViews - From compatibility, to security and beyond.](/state-of-webview-security.html)** ACM [Workshop on Security and Safety of AI-Empowered Mobile Super Apps (SaTS ’26)](https://superappsec.github.io)
 November 19th, 2026 | The Hague, The Netherlands.
 
 **[Hacking WebView features for Servo](/hacking-for-webviews.html)** Web Engines Hackfest 2026
 15-17 June | A Coruña, Galicia, Spain
 
-**[State of WebViews at FOSDEM 2026 Browser and web platform devroom](/state-of-webviews.html)** Can we fix things?
+**[State of WebViews](/state-of-webviews.html)** Can we fix things? - [FOSDEM 2026](https://archive.fosdem.org/2026/schedule/event/AHQB9B-state-of-webview/) 
+Brussels / 31 January & 1 February 2026
 
 **[Web Standards Beyond The Browser](https://webview-cg.github.io/tpac/TPAC-2024/Breakout/StandardsBeyondTheBrowser.html)** hosted breakout session at W3C TPAC September 2024 Anaheim, CA, USA
-
-**[WebView CG Meetings at TPAC](https://webview-cg.github.io/tpac/)** hosted meetings as Co-Chair of WebView CG
 
 # Talks about open source
 
