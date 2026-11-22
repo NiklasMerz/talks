@@ -1,11 +1,9 @@
-# Can we finally fully replace native apps with web apps?
+# Can web apps finally replace native apps completely?
 
-The web has gotten so many powerful APIs, we Progressive Web Apps, Trusted Web Apps, Isolated Web Apps, Super Apps and more. Nevertheless, most users and developers still gravitate to native applications on mobile devices.
+Over the years, many powerful APIs have been introduced to the web. Additionally, many new modern web application architectures, such as Progressive Web Apps, Trusted Web Apps, Isolated Web Apps, Super Apps and more, have been popping up. Nevertheless, most developers still gravitate towards native development on mobile devices.
 
-Remember Phonegap? Phonegap was built because the web has solved cross-platform, but there were still some gaps to be filled. The project proudly proclaimed: [The ultimate purpose of PhoneGap is to cease to exist](https://phonegap.com/blog/2012/05/09/phonegap-beliefs-goals-and-philosophy).
+Do you remember PhoneGap? PhoneGap was built to solve the fragmentation of mobile cross-platform development, but there were still some gaps to be filled. The project proudly proclaimed that [the ultimate purpose of PhoneGap](https://phonegap.com/blog/2012/05/09/phonegap-beliefs-goals-and-philosophy) is "to cease to exist".
 
-Adobe donated Phonegap to the Apache Software Foundation, and it became the Apache Cordova open source project around 2012. [Phonegap no longer it exists today](https://cordova.apache.org/announcements/2020/08/14/goodbye-phonegap.html). Cordova is actively maintained sill widely used.
+Adobe donated PhoneGap to the Apache Software Foundation in 2012, where it became Apache Cordova, an open source project. PhoneGap no longer exists today, but the Cordova project is actively maintained and widely used.
 
-Over the last few years I've built apps with web technologies, maintained Cordova, tried to fix WebViews and observed how the web is missing web developer and user needs.
-I'd like to look at what's holding us back from using only the web apps and finally retiring Cordova.
-
+Over the last few years I've built apps with web technologies, maintained Cordova, tried to fix WebViews and observed where the web falls short of developer and user needs. I'd like to look at what's holding us back from using web apps so that Apache Cordova could ultimately reach its goal: "to cease to exist".
