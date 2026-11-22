@@ -1,4 +1,4 @@
-# Can the web finally replace native apps completely?
+# Can the web finally replace native apps?
 
 Over the years, many powerful APIs have been introduced to the web. Additionally, many new modern web application architectures, such as Progressive Web Apps, Trusted Web Activities, Isolated Web Apps, Super Apps and more, have been popping up. Nevertheless, most developers still gravitate towards native development on mobile devices.
 
